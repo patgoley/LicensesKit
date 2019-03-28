@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 /// The view controller that displays acknowledgements for an app, with provided `notices` or a `notices.json` file.
-public class LicensesViewController: UIViewController, WKNavigationDelegate {
+open class LicensesViewController: UIViewController, WKNavigationDelegate {
     
     private var webView: WKWebView!
     

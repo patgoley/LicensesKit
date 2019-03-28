@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import StringBuilder
 
 class NoticesHtmlBuilder {
     
@@ -44,9 +43,20 @@ class NoticesHtmlBuilder {
         }
         return filePath
     }
+}
+
+class StringBuilder {
     
+    private var segments: [String] = []
     
-   
+    @discardableResult func append(_ string: String) -> StringBuilder {
+        segments.append(string)
+        return self
+    }
+    
+    func toString() -> String {
+        return segments.joined()
+    }
 }
 
 extension StringBuilder {
@@ -61,7 +71,7 @@ extension StringBuilder {
     func appendNoticeBlock(notice: Notice, showFullLicenseText: Bool) -> Self {
         _ = append("<ul><li>").append(notice.name)
         let currentNoticeURL = notice.url
-        if currentNoticeURL.characters.count > 0 {
+        if currentNoticeURL.count > 0 {
             _ = append(" (<a href=\"").append(currentNoticeURL).append("\">").append(currentNoticeURL).append("</a>)")
         }
         _ = append("</li></ul>")
