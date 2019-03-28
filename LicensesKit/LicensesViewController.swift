@@ -104,7 +104,7 @@ open class LicensesViewController: UIViewController, WKNavigationDelegate {
     /**
     Loads the view; NOT meant to be called outside of this class.
     */
-    override public func loadView() {
+    override open func loadView() {
         webView = WKWebView()
         
         webView?.navigationDelegate = self
@@ -115,7 +115,7 @@ open class LicensesViewController: UIViewController, WKNavigationDelegate {
     /**
     Setup after loading the view; NOT meant to be called outside of this class.
     */
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         if let title = navigationTitle {
@@ -128,7 +128,7 @@ open class LicensesViewController: UIViewController, WKNavigationDelegate {
     /**
     Final setup after view has appeared; NOT meant to be called outside of this class.
     */
-    override public func viewDidAppear(_ animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         htmlBuilder.notices = notices
 		
@@ -139,7 +139,7 @@ open class LicensesViewController: UIViewController, WKNavigationDelegate {
     /**
     Handle memory warnings; NOT meant to be used outside of this class.
     */
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
