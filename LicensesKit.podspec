@@ -12,5 +12,6 @@ Pod::Spec.new do |s|
   s.resources = ["LicensesKit/Supporting Files/Licenses/*.txt"]
   s.framework  = "UIKit", "WebKit"
   s.requires_arc = true
+  s.swift_version = '5.0'
 
 end
